@@ -9,7 +9,7 @@ public class Bildanalyse {
 	}
 
 	public static String umwandlung(String p ) {
-		String umgew = "";
+		String umgew = "Test";
 
 		for(int i=0; i<3; i= i+3){
 			String akt_zahl_string = new String();
