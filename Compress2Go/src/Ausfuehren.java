@@ -1,3 +1,8 @@
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 public class Ausfuehren {
     public static void main(String[] args) {
         /*
@@ -10,7 +15,14 @@ public class Ausfuehren {
 
 
         */
-        
+        Path filePath = Paths.get("H:/", "Desktop", "Informatik", "Kreis.ppm");
+    	try {
+			String text = Files.readString(filePath);
+			System.out.println(text);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
     }
 
