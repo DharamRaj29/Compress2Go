@@ -4,9 +4,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class Ausfuehren {
-	
-	static String text = "";
-	
     public static void main(String[] args) {
         /*
 
@@ -20,57 +17,76 @@ public class Ausfuehren {
         */
         Path filePath = Paths.get("H:/", "Desktop", "Informatik", "Kreis.ppm");
     	try {
-			text = Files.readString(filePath);
+			String text = Files.readString(filePath);
 			System.out.println(text);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-    	
-    	
-    	aufteilen(text);
+
     }
 
    
 
-    public static String aufteilen(String t) {
+    public static String aufteilen() {
         
-        String comp = new String();
+        String pixMap = "237 28 36 237 28 36 237 28 36 237 28 36 237 28 36";
         
-        char leerzeichen = ' ';
+        String aufgeteilt = "";
         
-        int leerzeichenZaehler = 0;
+        for(int i=0; i<pixMap.length(); i++){
+            
+        }
+        
+        
+        
+        
+        
+        
+        
+        return aufgeteilt;
 
-        for(int i=0; i < t.length(); i++){
-            String tripel1 = new String();
+
+
+
+
+        /*String comp = new String();
+
+        String uncomp = new String();
+        uncomp = "237 28 36 237 28 36 237 28 36 237 28 36 237 28 36";
+
+        for(int i=0; i < uncomp.length(); i++){
+            String tripel = new String();
 
             String tripel2 = new String();
 
-            tripel1 = tripel1 + t.charAt(i);
+            //tripel = tripel + uncomp.charAt(i);
             
-          
+            char leerzeichen = ' ';
+            
+            int leerzeichenZähler = 0;
              
-            if(t.charAt(i)== leerzeichen){
-                leerzeichenZaehler = leerzeichenZaehler + 1;
-                if(leerzeichenZaehler < 3){
-                    tripel1 = tripel1 + t.charAt(i) ;
+            if(uncomp.charAt(i)== leerzeichen){
+                leerzeichenZähler = leerzeichenZähler + 1;
+                if(leerzeichenZähler < 3){
+                    tripel = tripel + uncomp.charAt(i) ;
                 }
             }
-            else if(leerzeichenZaehler == 3){
+            else if(leerzeichenZähler == 3){
                 
-                leerzeichenZaehler = 0;
+                leerzeichenZähler = 0;
 
-                if(t.charAt(i)== leerzeichen){
-                    leerzeichenZaehler = leerzeichenZaehler + 1;
-                    if(leerzeichenZaehler < 3){
-                        tripel2 = tripel2 + t.charAt(i) ;
+                if(uncomp.charAt(i)== leerzeichen){
+                    leerzeichenZähler = leerzeichenZähler + 1;
+                    if(leerzeichenZähler < 3){
+                        tripel2 = tripel2 + uncomp.charAt(i) ;
                     }
                 }
 
             }
             else{
-                if(leerzeichenZaehler < 3)
-                tripel1 = tripel1 + t.charAt(i);
+                if(leerzeichenZähler < 3)
+                tripel = tripel + uncomp.charAt(i);
             }
             
 
@@ -79,7 +95,6 @@ public class Ausfuehren {
 
         
         return comp;
-        
+        */
     }
 }
-
