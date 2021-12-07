@@ -33,9 +33,34 @@ public class Ausfuehren {
         String pixMap = "237 28 36 237 28 36 237 28 36 237 28 36 237 28 36";
         
         String aufgeteilt = "";
+
+        char leerzeichen = ' ';
+
+        int leerzeichenZaehler = 0;
+
+        String tripel1 = new String();
+
         
         for(int i=0; i<pixMap.length(); i++){
-            
+            if(pixMap.charAt(i)==leerzeichen){
+                leerzeichenZaehler = leerzeichenZaehler+1;
+                
+
+            } 
+            else{
+                if(leerzeichenZaehler < 3){
+                    
+                    tripel1 = tripel1 + pixMap.charAt(i);
+                    
+                }
+                else{
+                    leerzeichenZaehler = 0;
+                    
+                    
+                }
+                
+
+            }
         }
         
         
