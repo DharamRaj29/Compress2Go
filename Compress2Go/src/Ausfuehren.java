@@ -38,24 +38,27 @@ public class Ausfuehren {
 
         int leerzeichenZaehler = 0;
 
-        String tripel1 = new String();
-
+        String tripel = new String();
+        String vergleichsTripel = new String();
         
-        for(int i=0; i<pixMap.length(); i++){
-            if(pixMap.charAt(i)==leerzeichen){
+        for(int i = 0; i < pixMap.length(); i++){
+            if(pixMap.charAt(i) == leerzeichen){
                 leerzeichenZaehler = leerzeichenZaehler+1;
-                
+                if(leerzeichenZaehler < 3){
+                    tripel = tripel + pixMap.charAt(i); 
+                }
 
             } 
             else{
                 if(leerzeichenZaehler < 3){
                     
-                    tripel1 = tripel1 + pixMap.charAt(i);
+                    tripel = tripel + pixMap.charAt(i);
                     
                 }
                 else{
+                    tripe
                     leerzeichenZaehler = 0;
-                    
+
                     
                 }
                 
