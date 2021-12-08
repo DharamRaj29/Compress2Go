@@ -4,6 +4,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class Ausfuehren {
+	static String text =  "";
     public static void main(String[] args) {
         /*
 
@@ -17,21 +18,68 @@ public class Ausfuehren {
         */
         Path filePath = Paths.get("H:/", "Desktop", "Informatik", "Kreis.ppm");
     	try {
-			String text = Files.readString(filePath);
+			text = Files.readString(filePath);
 			System.out.println(text);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
-        aufteilen();
+    	String text2= "237 28 36 237 28 36 237 28 36 237 28 36 237 28 36 237 28 36 255 255 255";
+ 
+    	
+    	System.out.println("/////////////////////////////////////////////////////////////////////////");
+        System.out.println(aufteilen(text2));
     }
 
    
+    
+    public static String aufteilen(String t) {
+    	String textAufgeteilt = "";
+    	char leerzeichen = ' ';
+    	String a = "";
+    	String vergleich = "";
+    	String vergleich2 = "";
+    	int counter = 1;
+    	int leerzeichenZaehler = 0;
+    for(int i = 0; i < t.length(); i++) {
+    	if(t.charAt(i) != leerzeichen) {
+    		a = a + t.charAt(i);
+    	}
+    	else {
+    		if(t.charAt(i) == leerzeichen && leerzeichenZaehler == 2) {
+    			leerzeichenZaehler = 0;
+    	         if(vergleich == "") {
+    	        	 vergleich = vergleich + a; 
+    	        	 a = "";
+    	        	 System.out.println(vergleich);
+    	         }
+    	         else {
+    	        	 vergleich2 = a;
+    	         }		
+    		}
+    		else {
+    			//if(leerzeichenZaehler != 0) {
+    			leerzeichenZaehler = leerzeichenZaehler + 1;
+    			a = a + t.charAt(i);
+    			//}
+        		}
+    		
+    		if(vergleich.equals(vergleich2)) {
+       		 counter = counter + 1;
+       	 }
+    	
+    	
+    }
+    }
+    
+    textAufgeteilt = vergleich + " " + counter;
+    
+    return textAufgeteilt;
+    }
+    
 
-    public static String aufteilen() {
+   /*  public static String aufteilen() {
         
-        String pixMap = "237 28 36 239 29 39 237 28 36 237 28 36 237 28 36";
+        String pixMap = "237 28 36 237 28 36 237 28 36 237 28 36 237 28 36";
         
         String aufgeteilt = "";
 
@@ -41,22 +89,16 @@ public class Ausfuehren {
 
         String tripel = new String();
         String vergleichsTripel = new String();
-
-        int tripelZahler = 0;
         
         for(int i = 0; i < pixMap.length(); i++){
             if(pixMap.charAt(i) == leerzeichen){
-                
                 leerzeichenZaehler = leerzeichenZaehler+1;
                 
                 if(leerzeichenZaehler < 3){
                     tripel = tripel + pixMap.charAt(i); 
                 }
                 else{
-                    
                     tripel = tripel + pixMap.charAt(i);
-
-                    tripelZahler = tripelZahler + 1;
                 }
 
             } 
@@ -66,19 +108,8 @@ public class Ausfuehren {
                     tripel = tripel + pixMap.charAt(i);
                     
                 }
-
-                else if(tripelZahler == 1){
-                    vergleichsTripel = tripel;
-
-                    tripelZahler = 1;
-                    
-                    tripel = "";
-                }
-
                 else{
-                    
-
-                    
+                    vergleichsTripel = tripel;
                     
                     tripel = tripel + pixMap.charAt(i);
                     leerzeichenZaehler = 0;
@@ -88,12 +119,10 @@ public class Ausfuehren {
                 
 
             }
-            System.out.println("Vergleichstripel:" + vergleichsTripel);
-            System.out.println("Tripel:" + tripel);
         }
         
-        
-        
+        System.out.println(tripel);
+        System.out.println("Vergleichstripel:" + vergleichsTripel);
 
         
         
@@ -101,7 +130,7 @@ public class Ausfuehren {
         
         return aufgeteilt;
 
-        //
+	*/
 
 
 
@@ -119,28 +148,28 @@ public class Ausfuehren {
             
             char leerzeichen = ' ';
             
-            int leerzeichenZähler = 0;
+            int leerzeichenZÃ¤hler = 0;
              
             if(uncomp.charAt(i)== leerzeichen){
-                leerzeichenZähler = leerzeichenZähler + 1;
-                if(leerzeichenZähler < 3){
+                leerzeichenZÃ¤hler = leerzeichenZÃ¤hler + 1;
+                if(leerzeichenZÃ¤hler < 3){
                     tripel = tripel + uncomp.charAt(i) ;
                 }
             }
-            else if(leerzeichenZähler == 3){
+            else if(leerzeichenZÃ¤hler == 3){
                 
-                leerzeichenZähler = 0;
+                leerzeichenZÃ¤hler = 0;
 
                 if(uncomp.charAt(i)== leerzeichen){
-                    leerzeichenZähler = leerzeichenZähler + 1;
-                    if(leerzeichenZähler < 3){
+                    leerzeichenZÃ¤hler = leerzeichenZÃ¤hler + 1;
+                    if(leerzeichenZÃ¤hler < 3){
                         tripel2 = tripel2 + uncomp.charAt(i) ;
                     }
                 }
 
             }
             else{
-                if(leerzeichenZähler < 3)
+                if(leerzeichenZÃ¤hler < 3)
                 tripel = tripel + uncomp.charAt(i);
             }
             
@@ -154,4 +183,3 @@ public class Ausfuehren {
 
         
     }
-}
