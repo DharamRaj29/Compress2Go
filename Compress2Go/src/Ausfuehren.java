@@ -31,7 +31,7 @@ public class Ausfuehren {
 
     public static String aufteilen() {
         
-        String pixMap = "237 28 36 237 28 36 237 28 36 237 28 36 237 28 36";
+        String pixMap = "237 28 36 239 29 39 237 28 36 237 28 36 237 28 36";
         
         String aufgeteilt = "";
 
@@ -41,16 +41,22 @@ public class Ausfuehren {
 
         String tripel = new String();
         String vergleichsTripel = new String();
+
+        int tripelZahler = 0;
         
         for(int i = 0; i < pixMap.length(); i++){
             if(pixMap.charAt(i) == leerzeichen){
+                
                 leerzeichenZaehler = leerzeichenZaehler+1;
                 
                 if(leerzeichenZaehler < 3){
                     tripel = tripel + pixMap.charAt(i); 
                 }
                 else{
+                    
                     tripel = tripel + pixMap.charAt(i);
+
+                    tripelZahler = tripelZahler + 1;
                 }
 
             } 
@@ -60,8 +66,19 @@ public class Ausfuehren {
                     tripel = tripel + pixMap.charAt(i);
                     
                 }
-                else{
+
+                else if(tripelZahler == 1){
                     vergleichsTripel = tripel;
+
+                    tripelZahler = 1;
+                    
+                    tripel = "";
+                }
+
+                else{
+                    
+
+                    
                     
                     tripel = tripel + pixMap.charAt(i);
                     leerzeichenZaehler = 0;
@@ -71,10 +88,12 @@ public class Ausfuehren {
                 
 
             }
+            System.out.println("Vergleichstripel:" + vergleichsTripel);
+            System.out.println("Tripel:" + tripel);
         }
         
-        System.out.println(tripel);
-        System.out.println("Vergleichstripel:" + vergleichsTripel);
+        
+        
 
         
         
@@ -82,7 +101,7 @@ public class Ausfuehren {
         
         return aufgeteilt;
 
-
+        //
 
 
 
