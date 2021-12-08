@@ -24,6 +24,7 @@ public class Ausfuehren {
 			e.printStackTrace();
 		}
 
+        aufteilen();
     }
 
    
@@ -56,7 +57,8 @@ public class Ausfuehren {
                     
                 }
                 else{
-                    tripe
+                    vergleichsTripel = tripel;
+                    tripel = tripel + pixMap.charAt(i);
                     leerzeichenZaehler = 0;
 
                     
@@ -66,8 +68,9 @@ public class Ausfuehren {
             }
         }
         
-        
-        
+        System.out.println(tripel);
+        System.out.println("Vergleichstripel:" + vergleichsTripel);
+
         
         
         
@@ -124,5 +127,7 @@ public class Ausfuehren {
         
         return comp;
         */
+
+        
     }
 }
