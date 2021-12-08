@@ -45,8 +45,12 @@ public class Ausfuehren {
         for(int i = 0; i < pixMap.length(); i++){
             if(pixMap.charAt(i) == leerzeichen){
                 leerzeichenZaehler = leerzeichenZaehler+1;
+                
                 if(leerzeichenZaehler < 3){
                     tripel = tripel + pixMap.charAt(i); 
+                }
+                else{
+                    tripel = tripel + pixMap.charAt(i);
                 }
 
             } 
@@ -58,6 +62,7 @@ public class Ausfuehren {
                 }
                 else{
                     vergleichsTripel = tripel;
+                    
                     tripel = tripel + pixMap.charAt(i);
                     leerzeichenZaehler = 0;
 
