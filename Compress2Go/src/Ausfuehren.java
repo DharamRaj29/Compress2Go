@@ -2,10 +2,13 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Scanner;
 
 public class Ausfuehren {
 	static String text =  "";
     public static void main(String[] args) {
+        
+        
         /*
 
         String uncomdpressedFile ->Bildpfad
@@ -24,10 +27,18 @@ public class Ausfuehren {
 			e.printStackTrace();
 		}
     	String text2= "237 28 36 237 28 36 237 28 36 237 28 36 237 28 36 237 28 36 255 255 255";
- 
-    	
-    	System.out.println("/////////////////////////////////////////////////////////////////////////");
-        System.out.println(aufteilen(text2));
+       /* String text2 = """
+        Get busy living
+        or
+        get busy dying.
+        --Stephen King""";
+        */
+
+    	//Die hier wieder einfügen!
+    	//System.out.println("/////////////////////////////////////////////////////////////////////////");
+        //System.out.println(aufteilen(text2));
+
+        System.out.println(zeilen(text2));
     }
 
    
@@ -77,109 +88,28 @@ public class Ausfuehren {
     }
     
 
-   /*  public static String aufteilen() {
-        
-        String pixMap = "237 28 36 237 28 36 237 28 36 237 28 36 237 28 36";
-        
-        String aufgeteilt = "";
+   
+        public static String zeilen(String t) {
+            String zeile1 = "";
+            String zeile2 = "";
+            String zeile3 = "";
+            String zeile4 = "";
+            
+            
+            
+            
+            
+            Scanner fileScanner = new Scanner(t);
+            
+            zeile1 = fileScanner.nextLine();
+            
+            System.out.println("Zeile 1 ist: " + zeile1);
 
-        char leerzeichen = ' ';
+            String geformt = "";
 
-        int leerzeichenZaehler = 0;
 
-        String tripel = new String();
-        String vergleichsTripel = new String();
-        
-        for(int i = 0; i < pixMap.length(); i++){
-            if(pixMap.charAt(i) == leerzeichen){
-                leerzeichenZaehler = leerzeichenZaehler+1;
-                
-                if(leerzeichenZaehler < 3){
-                    tripel = tripel + pixMap.charAt(i); 
-                }
-                else{
-                    tripel = tripel + pixMap.charAt(i);
-                }
-
-            } 
-            else{
-                if(leerzeichenZaehler < 3){
-                    
-                    tripel = tripel + pixMap.charAt(i);
-                    
-                }
-                else{
-                    vergleichsTripel = tripel;
-                    
-                    tripel = tripel + pixMap.charAt(i);
-                    leerzeichenZaehler = 0;
-
-                    
-                }
-                
-
-            }
+            
+            return geformt;
         }
-        
-        System.out.println(tripel);
-        System.out.println("Vergleichstripel:" + vergleichsTripel);
-
-        
-        
-        
-        
-        return aufgeteilt;
-
-	*/
-
-
-
-        /*String comp = new String();
-
-        String uncomp = new String();
-        uncomp = "237 28 36 237 28 36 237 28 36 237 28 36 237 28 36";
-
-        for(int i=0; i < uncomp.length(); i++){
-            String tripel = new String();
-
-            String tripel2 = new String();
-
-            //tripel = tripel + uncomp.charAt(i);
-            
-            char leerzeichen = ' ';
-            
-            int leerzeichenZÃ¤hler = 0;
-             
-            if(uncomp.charAt(i)== leerzeichen){
-                leerzeichenZÃ¤hler = leerzeichenZÃ¤hler + 1;
-                if(leerzeichenZÃ¤hler < 3){
-                    tripel = tripel + uncomp.charAt(i) ;
-                }
-            }
-            else if(leerzeichenZÃ¤hler == 3){
-                
-                leerzeichenZÃ¤hler = 0;
-
-                if(uncomp.charAt(i)== leerzeichen){
-                    leerzeichenZÃ¤hler = leerzeichenZÃ¤hler + 1;
-                    if(leerzeichenZÃ¤hler < 3){
-                        tripel2 = tripel2 + uncomp.charAt(i) ;
-                    }
-                }
-
-            }
-            else{
-                if(leerzeichenZÃ¤hler < 3)
-                tripel = tripel + uncomp.charAt(i);
-            }
-            
-
-
-        }
-
-        
-        return comp;
-        */
-
         
     }
