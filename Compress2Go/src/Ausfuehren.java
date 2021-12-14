@@ -28,7 +28,9 @@ public class Ausfuehren {
  
     	
     	System.out.println("/////////////////////////////////////////////////////////////////////////");
-        System.out.println(aufteilen(text2));
+       // System.out.println(aufteilen(text2));
+	   System.out.println(zeilen(text2));
+
     }
 
    
@@ -102,7 +104,8 @@ public class Ausfuehren {
 		String zeile3 = "";
 		String zeile4 = "";
 		
-		
+		String datei = "abs"
+		+"dkd";
 		
 		
 		
@@ -116,7 +119,9 @@ public class Ausfuehren {
 
 
 		
-		return geformt;
+		
+		//return geformt;
+		return datei;
 	}
         
     }
