@@ -17,19 +17,28 @@ public class Ausfuehren {
 
 
         */
-        Path filePath = Paths.get("H:/", "Desktop", "Informatik", "Kreis.ppm");
+		// Windows:
+        //Path filePath = Paths.get("H:/", "Desktop", "Informatik", "Kreis.ppm");
+		
+		// Mac:
+		Path filePath = Paths.get("/Users/", "dharamraj/", "Documents/", "Schule/", "Informatik/", "Kreis.ppm");
+		
     	try {
 			text = Files.readString(filePath);
-			System.out.println(text);
+			//System.out.println(text);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-    	String text2= "237 28 36 237 28 36 237 28 36 237 28 36 237 28 36 237 28 36 255 255 255";
+    	//String text2= "255 255 255 255 255 255 255 255 255 255 255 255 255 255 255";
  
     	
-    	System.out.println("/////////////////////////////////////////////////////////////////////////");
-       // System.out.println(aufteilen(text2));
-	   System.out.println(zeilen(text2));
+
+    	System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+
+       	// System.out.println(aufteilen(text2));
+		System.out.println(zeilen(text));
+
+
 
     }
 
@@ -104,24 +113,23 @@ public class Ausfuehren {
 		String zeile3 = "";
 		String zeile4 = "";
 		
-		String datei = "abs"
-		+"dkd";
-		
-		
-		
-		Scanner fileScanner = new Scanner(t);
-		
-		zeile1 = fileScanner.nextLine();
-		
-		System.out.println("Zeile 1 ist: " + zeile1);
-
+		try (Scanner fileScanner = new Scanner(t)) {
+			zeile1 = fileScanner.nextLine();
+			zeile2 = fileScanner.nextLine();
+			zeile3 = fileScanner.nextLine();
+			zeile4 = fileScanner.nextLine();
+		}
 		String geformt = "";
 
+		
+		return zeile1 + zeile2;
+	}
 
+	public static String umformen (String t){
+		String geformt = "";
 		
-		
-		//return geformt;
-		return datei;
+		return geformt;
+
 	}
         
     }
