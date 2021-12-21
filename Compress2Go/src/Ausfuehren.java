@@ -15,8 +15,8 @@ public class Ausfuehren {
         Compress Methode
         String compressedFile ->Bildpfad
         Decompress Methode
-		
         */
+
 		// Windows Schule:
         //Path filePath = Paths.get("H:/", "Desktop", "Informatik", "Kreis.ppm");
 
@@ -28,12 +28,13 @@ public class Ausfuehren {
 		
     	try {
 			text = Files.readString(filePath);
-			System.out.println(text);
+			//System.out.println(text);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
     	String text2= "255 255 255 255 255 255 255 255 255 255 255 255 255 255 255";
  
+		/*
     	String zeile = "";
     	System.out.println("/////////////////////////////////////////////////////////////////////////");
     	try (Scanner fileScanner = new Scanner(text)){
@@ -47,15 +48,21 @@ public class Ausfuehren {
 			
 	
 			}
-		
+		*/
 
+		String zeile1 = "";
+		String zeile2 = "";
+		String zeile3 = "";
+		String zeile4 = "";
 		
 
 
 
 		//System.out.println(zeilen(text));
 
-   		System.out.println(aufteilen(text2));
+   		//System.out.println(aufteilen(text2));
+
+		System.out.println(umformen(text));
 
     }
 
@@ -126,7 +133,7 @@ public class Ausfuehren {
     return textKomprimiert;
     }
     
-	public static String zeilen(String t) {
+	public  String zeilen(String t) {
 		String zeile1 = "";
 		String zeile2 = "";
 		String zeile3 = "";
@@ -138,18 +145,36 @@ public class Ausfuehren {
 			zeile3 = fileScanner.nextLine();
 			zeile4 = fileScanner.nextLine();
 		}
-		String geformt = "";
+		
 
 		
-		return zeile1 + zeile2 + zeile3;
+		return zeile1 + zeile2 + zeile3 + zeile4;
 	}
 
-	/*
+	
 	public static String umformen (String t){
 		String geformt = "";
 		
+		String sampleString = t;
+
+		String zeile1 = "P3";
+		String zeile2 = "# Created by IrfanView";
+		String zeile3 = "661 283";
+		//String zeile4 = "255";
+
+		//System.out.println(sampleString);
+
+		sampleString = sampleString.replace(zeile1, "");
+		sampleString = sampleString.replace(zeile2, "");
+		sampleString = sampleString.replace(zeile3, "");
+		//sampleString = sampleString.replace(zeile4, "");
+
+		System.out.println(sampleString);
+
+
+
 		return geformt;
 	}
-	*/
+	
         
     }
