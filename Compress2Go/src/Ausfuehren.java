@@ -34,19 +34,26 @@ public class Ausfuehren {
 		}
     	String text2= "255 255 255 255 255 255 255 255 255 255 255 255 255 255 255";
  
-    	/*String zeile = "";
+    	String zeile = "";
     	System.out.println("/////////////////////////////////////////////////////////////////////////");
-    	for(int i = 0; i < 5000000; i++) {
     	try (Scanner fileScanner = new Scanner(text)){
-    		zeile = fileScanner.nextLine();
-    	}
-    	gesamt = gesamt + zeile;
-    	
+			while(fileScanner.hasNextLine()) {
+				zeile = fileScanner.nextLine();
+				//System.out.println(zeile);
+				System.out.println(aufteilen(zeile));
+			}
+	
+			//gesamt = gesamt + zeile;
+			
+	
+			}
+		
 
-    	}
-		*/
+		
 
-		System.out.println(zeilen(text));
+
+
+		//System.out.println(zeilen(text));
 
    		System.out.println(aufteilen(text2));
 
