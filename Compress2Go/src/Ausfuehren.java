@@ -20,8 +20,11 @@ public class Ausfuehren {
 		
 
         */
-		// Windows:
+		// Windows Schule:
         //Path filePath = Paths.get("H:/", "Desktop", "Informatik", "Kreis.ppm");
+
+		//Windows Arian:
+		//Path filePath = Paths.get("C:/", "Users/", "Arian Lösing/", "Desktop/", "Schule", "Informatik/", "Kreis.ppm");
 		
 		// Mac:
 		Path filePath = Paths.get("/Users/", "dharamraj/", "Documents/", "Schule/", "Informatik/", "Kreis.ppm");
