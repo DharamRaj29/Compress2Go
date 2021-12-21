@@ -28,13 +28,13 @@ public class Ausfuehren {
 		
     	try {
 			text = Files.readString(filePath);
-			//System.out.println(text);
+			System.out.println(text);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-    	//String text2= "255 255 255 255 255 255 255 255 255 255 255 255 255 255 255";
+    	String text2= "255 255 255 255 255 255 255 255 255 255 255 255 255 255 255";
  
-    	String zeile = "";
+    	/*String zeile = "";
     	System.out.println("/////////////////////////////////////////////////////////////////////////");
     	for(int i = 0; i < 5000000; i++) {
     	try (Scanner fileScanner = new Scanner(text)){
@@ -44,10 +44,11 @@ public class Ausfuehren {
     	
 
     	}
+		*/
 
 		System.out.println(zeilen(text));
 
-   		//System.out.println(aufteilen(gesamt));
+   		System.out.println(aufteilen(text2));
 
     }
 
