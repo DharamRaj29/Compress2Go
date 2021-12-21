@@ -7,14 +7,17 @@ import java.util.Scanner;
 public class Ausfuehren {
 	static String text =  "";
     public static void main(String[] args) {
-        /*
-
+        
+		String gesamt = "";
+		
+		/*
         String uncomdpressedFile ->Bildpfad
         Compress Methode
 
         String compressedFile ->Bildpfad
         Decompress Methode
 
+		
 
         */
 		// Windows:
@@ -31,14 +34,19 @@ public class Ausfuehren {
 		}
     	//String text2= "255 255 255 255 255 255 255 255 255 255 255 255 255 255 255";
  
+    	String zeile = "";
+    	System.out.println("/////////////////////////////////////////////////////////////////////////");
+    	for(int i = 0; i < 5000000; i++) {
+    	try (Scanner fileScanner = new Scanner(text)){
+    		zeile = fileScanner.nextLine();
+    	}
+    	gesamt = gesamt + zeile;
     	
 
-    	System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+    	}
 
-       	// System.out.println(aufteilen(text2));
 		System.out.println(zeilen(text));
-
-
+   		//System.out.println(aufteilen(gesamt));
 
     }
 
@@ -52,58 +60,60 @@ public class Ausfuehren {
     	String vergleich2 = "";
     	int counter = 1;
     	int leerzeichenZaehler = 0;
-    	boolean vollstaendig = false;
-    	String zw = "";
+    	
     for(int i = 0; i < t.length(); i++) {
-    	if(t.charAt(i) != leerzeichen) {
+    	if(t.charAt(i) != leerzeichen && i !=  t.length() -1 ) {
     		a = a + t.charAt(i);
+    		//System.out.println(a);
     	}
     	else {
+    		if(t.charAt(i) != leerzeichen && i == t.length() - 1) {
+    			a = a + t.charAt(i);
+    			vergleich2 = a;
+    		}
     		if(t.charAt(i) == leerzeichen && leerzeichenZaehler == 2) {
 
     			leerzeichenZaehler = 0;
     	         if(vergleich == "") {
     	        	 vergleich = vergleich + a; 
-    	        	 System.out.println("Vergleich 1 " + vergleich);
+    	        	// System.out.println("Vergleich 1 " + vergleich);
     	        	 a = "";
-    	        	 System.out.println("aaaaa: " + a);
-    	        	 i = i + 1;
     	         }
     	         else {
-    	    		vollstaendig = true;
-    	    		
     	    		vergleich2 = "";
     	    		vergleich2 = a;
-    	    		System.out.println("a2 " + a);
-    	    		System.out.println("vergleich2 " + vergleich2);
-    	    		System.out.println("a " + a);
+    	    		a = "";
+    	    		//System.out.println("vergleich2 " + vergleich2);
     	         }		
     		}
     		else {
-    			vollstaendig = false;
     			leerzeichenZaehler = leerzeichenZaehler + 1;
     			a = a + t.charAt(i);
         		}
     		
-    		if(vergleich.equals(vergleich2)) {
+    		if(vergleich.equals(vergleich2) && !vergleich2.equals("")) {
        		 counter = counter + 1;
+       		 vergleich2 = "";
+       		// System.out.println("counter: " + counter);
        	 }
-    		/* else {
-    			if(vergleich != vergleich2 && vollstaendig == true) {
-    				textKomprimiert = textKomprimiert + vergleich + counter + "   ";
-    				System.out.println(zw);
-    				vergleich = "";
+    		 else {
+    			if(vergleich != vergleich2 && !vergleich2.equals("")) {
+    				textKomprimiert = textKomprimiert + vergleich + " " + counter + " ";
+    				vergleich = vergleich2;
     				counter = 0;
     			}
     		}
-    		*/
+    		
     	
     	
     }
     }
-    
-    textKomprimiert = vergleich +" Anzahl: " + counter;
-    
+    if(counter != 0) {
+    textKomprimiert = textKomprimiert + vergleich +" " + counter;
+    }
+    else {
+    	textKomprimiert = textKomprimiert + vergleich +" " + 1;	
+    }
     return textKomprimiert;
     }
     
@@ -122,7 +132,7 @@ public class Ausfuehren {
 		String geformt = "";
 
 		
-		return zeile1 + zeile2;
+		return zeile1 + zeile2 + zeile3;
 	}
 
 	public static String umformen (String t){
