@@ -13,12 +13,9 @@ public class Ausfuehren {
 		/*
         String uncomdpressedFile ->Bildpfad
         Compress Methode
-
         String compressedFile ->Bildpfad
         Decompress Methode
-
 		
-
         */
 		// Windows Schule:
         //Path filePath = Paths.get("H:/", "Desktop", "Informatik", "Kreis.ppm");
@@ -144,7 +141,6 @@ public class Ausfuehren {
 		String geformt = "";
 		
 		return geformt;
-
 	}
 	*/
         
