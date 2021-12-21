@@ -49,6 +49,7 @@ public class Ausfuehren {
     	}
 
 		System.out.println(zeilen(text));
+
    		//System.out.println(aufteilen(gesamt));
 
     }
@@ -138,11 +139,13 @@ public class Ausfuehren {
 		return zeile1 + zeile2 + zeile3;
 	}
 
+	/*
 	public static String umformen (String t){
 		String geformt = "";
 		
 		return geformt;
 
 	}
+	*/
         
     }
