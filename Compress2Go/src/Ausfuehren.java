@@ -8,17 +8,19 @@ import java.util.Scanner;
 
 public class Ausfuehren {
 	static String text =  "";
+	static String text2 = "";
     public static void main(String[] args) throws IOException {
      
-
+    
+    	
 		// Windows Schule:
         //Path filePath = Paths.get("H:/", "Desktop", "Informatik", "Kreis.ppm");
 
 		//Windows Arian:
-		//Path filePath = Paths.get("C:/", "Users/", "Arian Lösing/", "Desktop/", "Schule", "Informatik/", "Kreis.ppm");
+		Path filePath = Paths.get("C:/", "Users/", "Arian Lösing/", "Desktop/", "Schule", "Informatik/", "Kreis.ppm");
 		
 		// Mac:
-		Path filePath = Paths.get("/Users/", "dharamraj/", "Documents/", "Schule/", "Informatik/", "Kreis.ppm");
+		//Path filePath = Paths.get("/Users/", "dharamraj/", "Documents/", "Schule/", "Informatik/", "Kreis.ppm");
 		
     	try {
 			text = Files.readString(filePath);
@@ -28,43 +30,41 @@ public class Ausfuehren {
     	
 		int i = 0;
     	String zeile = "";
+    	String aufZeile = "";
     	try (Scanner fileScanner = new Scanner(text)){
 			while(fileScanner.hasNextLine()) {
 			i = i + 1;
 			if(i > 4){
 				zeile = fileScanner.nextLine();
-				System.out.println(aufteilen(zeile));
+				aufZeile = (aufteilen(zeile) + System.getProperty("line.separator"));
 				}
 				else{
-				System.out.println(fileScanner.nextLine());
+					aufZeile = fileScanner.nextLine() + System.getProperty("line.separator");
+				//System.out.println(fileScanner.nextLine());
 				}
+			try {
+	    		@SuppressWarnings("resource")
+	    		FileOutputStream ppm = new FileOutputStream("C:\\Users\\Arian Lösing\\Desktop\\Schule\\Informatik\\Kreis3.ppm", true);
+	    		ppm.write(aufZeile.getBytes());
+	    		ppm.flush();
+	    	} catch (FileNotFoundException e) {
+	    		// TODO Auto-generated catch block
+	    		e.printStackTrace();
+	    	}
 			}
     	}
-	//Arian
-	/*
-	try {
-		@SuppressWarnings("resource")
-		FileOutputStream ppm = new FileOutputStream("C:\\Users\\Arian Lösing\\Desktop\\Schule\\Informatik");
-		ppm.write(zeile.getBytes());
-	} catch (FileNotFoundException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	}
-	*/
-
-	//Dharam
-	try {
-		@SuppressWarnings("resource")
-		FileOutputStream ppm = new FileOutputStream("/Users/dharamraj/Documents/Schule/Informatik");
-		ppm.write(zeile.getBytes());
-	} catch (FileNotFoundException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	}
 	
 	
+    	 Path filePath2 = Paths.get("C:/", "Users/", "Arian Lösing/", "Desktop/", "Schule", "Informatik/", "Kreis3.ppm");
+     	try {
+ 			text2 = Files.readString(filePath2);
+ 			System.out.println(text2);
+ 		} catch (IOException e) {
+ 			e.printStackTrace();
+ 		}
 	
-}
+	
+			}
 
 
    
